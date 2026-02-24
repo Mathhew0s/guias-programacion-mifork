@@ -1,4 +1,4 @@
-# TEMA 2. Encapsulación
+# TEMA 2. Encapsulación 
 
 ## 1. En Programación Orientada a Objetos (POO), ¿Qué buscan la **encapsulación** y **la ocultación** de información? Enumera brevemente algunas ventajas de la ocultación de información.
 
@@ -30,7 +30,8 @@ La ocultación de información ayuda a preservar estas invariantes al restringir
 
 ## 5. Pon un ejemplo de una clase `Punto` en `Java`, con dos coordenadas, `x` e `y`, de tipo `double`, con un método `calcularDistanciaAOrigen`, y que haga uso de la ocultación de información. ¿Cuál es la interfaz pública de la clase `Punto`? ¿Qué significa `public` y `private`?
 
-### Respuesta
+
+```java
 public class Punto {
     private double x;
     private double y;
@@ -52,7 +53,7 @@ public class Punto {
         return y;
     }
 }
-
+```
 La interfaz pública de esta clase `Punto` está compuesta por el constructor `Punto(double, double)` y los métodos públicos: `calcularDistanciaAOrigen()`, `getX()` y `getY()`. Estos son los únicos elementos accesibles desde fuera de la clase.
 
 En Java, `public` es un modificador que indica que el miembro (atributo, método, constructor o clase) es accesible desde cualquier otra clase. `Private` es un modificador que restringe el acceso al miembro únicamente al interior de la propia clase en la que está declarado, impidiendo el acceso directo desde el exterior.
@@ -78,11 +79,13 @@ En otros lenguajes como C++ y C#, también existen niveles similares de visibili
 Los miembros privados de una instancia están ocultos para otras clases, pero NO para otras instancias de la misma clase. En POO, una instancia puede acceder directamente a los miembros privados de otra instancia de la misma clase, ya que el control de acceso se basa en la clase, no en el objeto individual.
 
 Ejemplo con el método `calcularDistanciaAPunto(Punto otro)` en la clase `Punto`:
+```
 public double calcularDistanciaAPunto(Punto otro) {
     double diffX = this.x - otro.x; // Acceso directo a otro.x (privado)
     double diffY = this.y - otro.y; // Acceso directo a otro.y (privado)
     return Math.sqrt(diffX * diffX + diffY * diffY);
 }
+```
 Aunque `x` e `y` son privados, el método puede acceder directamente a `otro.x` y `otro.y` porque `otro` es una instancia de la misma clase `Punto`. Esto demuestra que la privacidad es a nivel de clase, no a nivel de objeto.
 
 ## 9. ¿Qué son los métodos "getter" y "setter" en los lenguajes orientados a objetos?
@@ -113,7 +116,6 @@ Los constructores privados pueden utilizarse cuando se desea controlar estrictam
 
 Este enfoque se emplea en patrones como singleton, donde solo puede existir una única instancia de la clase. También se usa en métodos factoría, donde la clase ofrece métodos estáticos que devuelven instancias configuradas de una manera determinada. En estos escenarios, ocultar el constructor facilita el mantenimiento de invariantes y evita usos incorrectos.
 
----
 
 ## 13. ¿Cómo se indican los **miembros de clase** en Java? Pon un ejemplo, en la clase `Punto` definida anteriormente, para que incluya miembros de clase que permitan saber cuáles son los valores `x` e `y` máximos que se han establecido en todos los puntos que se hayan creado hasta el momento.
 
