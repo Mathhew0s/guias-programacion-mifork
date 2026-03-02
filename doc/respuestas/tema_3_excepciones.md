@@ -1,17 +1,4 @@
-<!--
-Posible prompt:
-<prompt>
-Tengo un cuestionario con preguntas sobre "Excepciones". Debes tener en cuenta que los conocimientos previos que tengo (y por tanto tus respuestas deben ser adaptadas), son:
-- C/C++ sin orientación a objetos.
-- Temas de Java previos: Clases y Objetos, Encapsulación.
 
-Cada respuesta debe tener entre 2 - 4 párrafos de longitud (sin contar los trozos de código).
-
-Por favor, escribe en impersonal las respuestas.
-
-</prompt>
-----
--->
 # TEMA 3. Excepciones
 
 ## 1. Empecemos un tema sobre control de errores en lenguajes de programación, con algo básico. En C, donde no existen las excepciones, pongamos un ejemplo de una raíz que toma número flotante positivo. Queremos controlar el error si la función recibe un número negativo. El usuario debe ser informado pero desde fuera de la función `raiz` ¿Cómo indicamos ese error?. Enumera dos opciones diferentes de diseñar, poniendo un ejemplo de código de cada una.
