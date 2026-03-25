@@ -1,10 +1,10 @@
-
+ 
 # TEMA 3. Excepciones
 
 ## 1. Empecemos un tema sobre control de errores en lenguajes de programación, con algo básico. En C, donde no existen las excepciones, pongamos un ejemplo de una raíz que toma número flotante positivo. Queremos controlar el error si la función recibe un número negativo. El usuario debe ser informado pero desde fuera de la función `raiz` ¿Cómo indicamos ese error?. Enumera dos opciones diferentes de diseñar, poniendo un ejemplo de código de cada una.
 
 En C, como no existen excepciones, el control de errores debe realizarse mediante mecanismos manuales. Una opción es devolver un valor especial que indique que se produjo un error. Por ejemplo, si la raíz debe devolver un double, se puede usar un valor imposible o distintivo, como -1.0, y documentar que dicho valor representa un error. El código llamador debe comprobarlo explícitamente antes de utilizar el resultado.
-
+ 
 Otra opción habitual en C es devolver un código de error mediante un parámetro adicional o una variable global como errno. En este caso, la función devuelve el resultado válido por un parámetro y un entero que indica si hubo o no error. Esto separa el valor calculado del indicador de fallo, permitiendo un control más claro desde fuera.
 
 Ejemplo 1 (valor especial):
